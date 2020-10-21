@@ -127,7 +127,7 @@ class PyGram:
             return
 
         headers = {'cookie': 'ig_cb=1'}
-        response = requests.get('https://www.instagram.com/', headers=headers)
+        response = requests.get('https://www.instagram.com/', headers=headers, verify=False)
         cookies = response.cookies.get_dict()
         headers['x-csrftoken'] = cookies['csrftoken']
 
